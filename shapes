@@ -1,0 +1,41 @@
+from tkinter import *
+
+root = Tk()
+
+canvas = Canvas(root, width=200, height=250)
+canvas.pack()
+
+def blackLine():
+    canvas.create_line(0, 0, 200, 50)
+
+def redLine():
+    canvas.create_line(0, 100, 200, 50, fill="red")
+
+def greenBox():
+    canvas.create_rectangle(25, 25, 130, 60, fill="green")
+# delete doesn't work for some reason
+def delete_Redline():
+    canvas.delete(redLine)
+
+def delete_Blackline():
+    canvas.delete(blackLine)
+
+def delete_Greenbox():
+    canvas.delete(greenBox)
+
+button1 = Button(root, text="Delete red line", command=delete_Redline)
+button1.pack()
+button4 = Button(root, text="Make Red line", command=redLine)
+button4.pack()
+
+button2 = Button(root, text="Delete black line", command=delete_Blackline)
+button2.pack()
+button5 = Button(root, text="Make black line", command=blackLine)
+button5.pack()
+
+button3 = Button(root, text="Delete green box", command=delete_Greenbox)
+button3.pack()
+button6 = Button(root, text="Make green box", command=greenBox)
+button6.pack()
+
+root.mainloop()
