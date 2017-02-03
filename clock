@@ -1,0 +1,39 @@
+from tkinter import *
+from datetime import datetime
+
+now = datetime.now()
+
+root = Tk()
+
+def start():
+    return clockMantle()
+    return update()
+
+def update():
+    return clockMantle()
+
+def clockMantle():
+    label_1 = Label(root, text="month/day/year:")
+
+     #time inputs
+    label_2 = Label(root, text= "%s/%s/%s" % (now.month, now.day, now.year))
+
+    # specifacation position
+    label_1.grid(row=0, sticky=W)
+
+    #time input position
+    label_2.grid(row=0, column=1, sticky=W)
+
+    #update button
+    button_2 = Button(root, text= "update!", command=update )
+    button_2.grid(row=3, column=1)
+
+def clock_start():
+    button_1 = Button(root, text= "start clock", command=start)
+    button_1.grid(row=3, sticky=W)
+
+if __name__ == '__main__':
+    clock_start()
+
+root.mainloop()
+
