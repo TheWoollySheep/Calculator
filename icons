@@ -1,0 +1,9 @@
+from tkinter import *
+
+root = Tk()
+
+images = PhotoImage(file="TheWoollySheep.png")
+label = Label(root, image=images)
+label.pack()
+
+root.mainloop()
